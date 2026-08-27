@@ -63,6 +63,7 @@ function MarqueeRow({
   reverse?: boolean;
   duration?: number;
 }) {
+  const items = brands.length < 10 ? [...brands, ...brands] : brands;
   return (
     <div className="marquee-row group" role="marquee" aria-label="Supported AI providers">
       {[0, 1].map((copy) => (
@@ -75,8 +76,8 @@ function MarqueeRow({
             animationDirection: reverse ? "reverse" : "normal",
           }}
         >
-          {brands.map((brand) => (
-            <BrandPill key={`${copy}-${brand.name}`} brand={brand} />
+          {items.map((brand, i) => (
+            <BrandPill key={`${copy}-${i}-${brand.name}`} brand={brand} />
           ))}
         </ul>
       ))}
