@@ -8,7 +8,7 @@ export type Brand = {
 const ICON = (file: string) => `https://icon.xiaoge.org/images/ai/${file}`;
 
 export const defaultBrands: Brand[] = [
-  { name: "Anthropic", src: ICON("Anthropic.png") },
+  { name: "Claude", src: ICON("Claude.png") },
   { name: "OpenAI", src: ICON("ChatGPT.png") },
   { name: "Moonshot AI", src: ICON("Moonshot.png") },
   { name: "DeepSeek", src: ICON("DeepSeek.png") },
@@ -21,7 +21,7 @@ export const defaultBrands: Brand[] = [
   { name: "ChatGPT", src: ICON("ChatGPT-2.png") },
   { name: "Gemini", src: ICON("Gemini.png") },
   { name: "Qwen", src: ICON("Qwen.png") },
-  { name: "OpenCode", src: ICON("OpenClaw.png") },
+  { name: "Kimi", src: ICON("Kimi.png") },
   { name: "Hermes Agent", src: ICON("Hermes-Agent.png") },
 ];
 
