@@ -65,7 +65,7 @@ function MarqueeRow({
 }) {
   const items = brands.length < 10 ? [...brands, ...brands] : brands;
   return (
-    <div className="marquee-row group" role="marquee" aria-label="Supported AI providers">
+    <div className="marquee-row group" aria-label="Supported AI providers">
       {[0, 1].map((copy) => (
         <ul
           key={copy}
