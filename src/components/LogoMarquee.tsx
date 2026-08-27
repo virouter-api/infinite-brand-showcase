@@ -46,7 +46,7 @@ function BrandPill({ brand }: { brand: Brand }) {
           {brand.name.slice(0, 2).toUpperCase()}
         </span>
       )}
-      <span className="whitespace-nowrap text-sm font-medium tracking-tight text-foreground sm:text-base">
+      <span className="whitespace-nowrap text-sm font-medium tracking-tight text-foreground">
         {brand.name}
       </span>
     </li>
