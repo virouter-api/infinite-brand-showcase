@@ -90,7 +90,7 @@ export function LogoMarquee({ brands = defaultBrands }: { brands?: Brand[] }) {
   const bottom = brands.slice(mid);
 
   return (
-    <div className="marquee-mask flex flex-col gap-3 sm:gap-4">
+    <div className="marquee-mask flex flex-col divide-y divide-border border-y border-border">
       <MarqueeRow brands={top} duration={38} />
       <MarqueeRow brands={bottom} reverse duration={46} />
     </div>
