@@ -143,3 +143,93 @@
     color: var(--color-foreground);
   }
 }
+
+/* ---- Infinite logo marquee ---- */
+@layer components {
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .marquee-row {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  .marquee-track {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.75rem;
+    padding-right: 0.75rem;
+    min-width: 100%;
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+
+  .marquee-row:hover .marquee-track,
+  .marquee-row:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--color-border);
+    background:
+      linear-gradient(
+        140deg,
+        color-mix(in oklch, var(--color-card) 92%, transparent),
+        color-mix(in oklch, var(--color-background) 90%, transparent)
+      );
+    box-shadow: 0 1px 0 0 color-mix(in oklch, white 8%, transparent) inset;
+    transition:
+      border-color 200ms ease,
+      transform 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .marquee-pill:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklch, var(--color-primary) 45%, transparent);
+    box-shadow: 0 8px 24px -12px color-mix(in oklch, var(--color-primary) 60%, transparent);
+  }
+
+  @media (min-width: 640px) {
+    .marquee-track {
+      gap: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-row {
+    overflow-x: auto;
+  }
+}
