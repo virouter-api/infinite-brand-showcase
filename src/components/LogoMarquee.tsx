@@ -22,7 +22,6 @@ export const defaultBrands: Brand[] = [
   { name: "Gemini", src: ICON("Gemini.png") },
   { name: "Qwen", src: ICON("Qwen.png") },
   { name: "Kimi", src: ICON("Kimi.png") },
-  { name: "Hermes Agent", src: ICON("Hermes-Agent.png") },
 ];
 
 function BrandPill({ brand }: { brand: Brand }) {
